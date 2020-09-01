@@ -1,0 +1,5 @@
+export const LOCATION_REQUEST = 'LOCATION REQUEST';
+export const LOCATION_SUCCESS = 'LOCATION SUCCESS';
+export const LOCATION_FAIL = 'LOCATION FAIL';
+
+export const GEOLOCATION_KEY = '9b6c925dbd9e63';

@@ -1,0 +1,5 @@
+export const WEATHER_REQUEST = 'WEATHER REQUEST';
+export const WEATHER_SUCCESS = 'WEATHER SUCCESS';
+export const WEATHER_FAIL = 'LOCATION FAIL';
+
+export const WEATHER_KEY = '02bd6eb30ab146a09860603f7b5216b3';
