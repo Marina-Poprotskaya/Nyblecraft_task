@@ -9,11 +9,11 @@ mapboxgl.accessToken = MAP_TOKEN;
 class Map extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      
       lng: this.props.coordinates.longitude,
       lat: this.props.coordinates.latitude,
-      zoom: 2
+      zoom: 9
     };
   }
 

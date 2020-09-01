@@ -1,8 +1,8 @@
 import React from 'react';
-// import { connect } from 'react-redux';
-import Location from './components/location/index'
-import Weather from './components/weather/index'
-import Map from './components/mapboxAndReact/index'
+import FirstScreen from './components/firstScreen/index';
+import NavBar from './components/navbar';
+import Table from './components/tableScreen/index';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
 import './App.scss';
@@ -10,19 +10,15 @@ import './App.scss';
 
 function App() {
   return (
-    <div className="main">
-      <div className='container'>
-        <div className="wrapper-block">
-          <div className="inner location-block">
-            <Location />
-            <Weather />
-          </div>
-          <div className="inner map-block">
-            <Map />
+    <Router>
+        <div className="main">
+          <div className='container'>
+            <Route path="/" component={NavBar} />
+            <Route exact path = "/firstScreen" component={FirstScreen} />
+            <Route path = "/tableScreen" component={Table} />
           </div>
         </div >
-      </div >
-    </div >
+    </Router>
   );
 }
 
