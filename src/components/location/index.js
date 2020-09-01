@@ -32,8 +32,8 @@ const { adress } = this.state.location;
         <div className="subinner location-block__coordinates">
           <ListGroup key={'1'} variant="flush">
             <ListGroup.Item><b>Coordinates</b></ListGroup.Item>
-    <ListGroup.Item>longitude: {coordinates.longitude}</ListGroup.Item>
-            <ListGroup.Item>latitude: {coordinates.latitude}</ListGroup.Item>
+    <ListGroup.Item>longitude: {coordinates.longitude}°</ListGroup.Item>
+            <ListGroup.Item>latitude: {coordinates.latitude}°</ListGroup.Item>
           </ListGroup>
         </div>
         <div className="subinner location-block__adress">
