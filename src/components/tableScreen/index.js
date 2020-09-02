@@ -1,8 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { loadState } from '../location/localStorage';
 import Button from 'react-bootstrap/Button';
-import ListGroup from 'react-bootstrap/ListGroup';
 import Modal from '../modal/index.js';
 import './style.scss';
 
@@ -16,38 +13,40 @@ class Table extends React.Component {
       showModal: false,
     }
   }
-  
+
   handleModal = () => {
-    this.setState({showModal: !this.state.showModal});
+    this.setState({ showModal: !this.state.showModal });
+    // for(let i = 0; i = this.state.arrayOfData.length; i++) {
+    //   console.log(this.id)
+    //   if(this.state.arrayOfData[i].weather.date === Button.id) {
+    //     console.log(i);
+    //     return i;
+    //   }
+    // }
   }
 
   render() {
-  const arrayForTable = [loadState()];
-  console.log('arrayForTable: ', arrayForTable);
-   return(
-     <div className='wrapperTable'>
-       { this.state.showModal && <Modal handleModal={this.handleModal}/> }
-       {arrayForTable.map(() => (
-         <div key={`id-${this.state.arrayOfData.location.date}`} className="rowForData">
-           <div className='cell'>{this.state.arrayOfData.location.date.day}</div>
-           <div className='cell'>{this.state.arrayOfData.location.date.time}</div>
-           <div className='cell'>
-             {this.state.arrayOfData.location.coordinates.latitude}° <br/>
-             {this.state.arrayOfData.location.coordinates.longitude}°
+    return (
+      <div className='wrapperTable'>
+        {this.state.showModal && <Modal handleModal={this.handleModal} />}
+        {this.state.arrayOfData.reverse().map(({ location, weather }) => (
+          <div key={`id-${location.idDate}`} className="rowForData">
+            <div className='cell'>{location.date.day}</div>
+            <div className='cell'>{location.date.time}</div>
+            <div className='cell'>
+              {location.coordinates.latitude}° <br />
+              {location.coordinates.longitude}°
              </div>
-           <div className='cell'>{this.state.arrayOfData.location.adress.city}</div>
-           <div className='cell button'>
-                <Button variant="info" id = {`id-${this.state.arrayOfData.weather.date}`} onClick={this.handleModal}>Info</Button>
-           </div>
-         </div>
-       ))}
-     </div>
+            <div className='cell'>{location.adress.city}</div>
+            <div className='cell button'>
+              <Button variant="info" id={`id-${weather.date}`} onClick={this.handleModal}>Info</Button>
+            </div>
+          </div>
+
+        ))}
+      </div>
     )
   }
-}
+} 
 
-const mapDispatchToProps = {
-  loadState,
-};
-
-export default connect(null, mapDispatchToProps)(Table);
+export default Table;

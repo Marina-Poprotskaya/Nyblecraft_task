@@ -13,10 +13,9 @@ const createTemplateObjectWithLocation = (data) => {
     date: {
       day: currentDate.toLocaleDateString(),
       time: currentDate.toLocaleTimeString().slice(0,-3),
-    }
-    
+    },
+    idDate: JSON.stringify(currentDate),
   };
-  console.log('dataAboutLocation.date: ', dataAboutLocation.date);
   return dataAboutLocation;
 }
 

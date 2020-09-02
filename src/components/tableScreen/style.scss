@@ -1,13 +1,18 @@
 .wrapperTable {
   position: relative;
+  display: flex;
+  flex-direction: column;
   height: 80%;
   background-color: rgba(0, 0, 0, 0.671);
   padding: 5px;
+  overflow-y: scroll; 
+  overflow-x: hidden;
 }
 
 .rowForData {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 5px;
 }
 
 .cell {
