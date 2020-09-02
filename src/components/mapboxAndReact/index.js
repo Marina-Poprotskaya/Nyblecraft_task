@@ -74,6 +74,7 @@ const getCoordinates = (store) => store.location.coordinates;
 
 const mapStateToProps = (store) => ({
   coordinates: getCoordinates(store),
+
 });
 
 export default connect(mapStateToProps, null)(Map);

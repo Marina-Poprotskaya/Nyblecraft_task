@@ -4,6 +4,7 @@ import {
   LOCATION_FAIL,
 } from './constants';
 
+const currentDate = new Date();
 const initialState = {
     coordinates: {
       latitude: 0,
@@ -13,6 +14,10 @@ const initialState = {
       Country: 'Unknown',
       City: 'Unknown',
     },
+    date: {
+      day: currentDate.toLocaleDateString(),
+      time: currentDate.toLocaleTimeString().slice(0,-3),
+    }
 };
 
 function locationReducer(state = initialState, action) {

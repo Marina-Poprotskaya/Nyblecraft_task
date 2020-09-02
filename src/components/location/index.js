@@ -13,9 +13,11 @@ class Location extends React.Component {
     };
   }
 
+
   componentDidMount() {
     const { getUserLocation } = this.props;
     getUserLocation();
+    // localStorage.setItem('userLocation', this.state.location);
   }
 
   componentDidUpdate(nextProps) {
@@ -49,7 +51,10 @@ const { adress } = this.state.location;
 }
 
 
-const isLoading = (store) => store.location.isLoading;
+const isLoading = (store) => { 
+  console.log('store.location.isLoading: ', store);
+  return store.location.isLoading };
+
 
 const getLocation = (store) => store.location;
 

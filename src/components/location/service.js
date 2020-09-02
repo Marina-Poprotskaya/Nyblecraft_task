@@ -12,6 +12,7 @@ const getUserLocation = () => async (dispatch) => {
     const response = await fetch(urlLocation);
     const data = await response.json();
     const locationObject = createTemplateObjectWithLocation(data);
+    console.log('locationObject: ', locationObject);
     dispatch(locationSuccess(locationObject));
   } catch (error) {
     dispatch(locationFail(error));

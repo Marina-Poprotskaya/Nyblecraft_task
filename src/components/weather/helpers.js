@@ -7,6 +7,7 @@ const createTemplateObjectWithWeather = (data) => {
       feelsLike: `${dataNew.app_temp.toFixed()}°C`,
       humidity: `${dataNew.rh}%`,
       wind: `${dataNew.wind_spd} m/s`,
+      date: new Date(),
   };
   return dataAboutWeather;
 }
