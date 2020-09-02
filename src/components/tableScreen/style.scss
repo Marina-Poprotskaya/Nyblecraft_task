@@ -1,4 +1,5 @@
 .wrapperTable {
+  position: relative;
   height: 80%;
   background-color: rgba(0, 0, 0, 0.671);
   padding: 5px;
@@ -17,3 +18,8 @@
   padding: 5px;
   border: 1px solid rgba(255, 255, 255, 0.575);
 }
+
+.cell:last-child {
+  border: none;
+}
+

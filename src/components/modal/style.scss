@@ -1,0 +1,29 @@
+.modalTable {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  //display: none;
+  background-color: #343a40;
+  z-index: 999;
+
+   .list-group-item {
+    background-color: #343a40 !important;
+    font-size: 18px;
+
+      b {
+        font-size: 20px;
+      }
+   }
+}
+
+.modal-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buttonClose {
+  margin: 100px;
+}
