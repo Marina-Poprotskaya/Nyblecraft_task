@@ -7,8 +7,8 @@ import {
 const currentDate = new Date();
 const initialState = {
     coordinates: {
-      latitude: 0,
-      longitude: 0,
+      latitude: 53.9000,
+      longitude: 27.5667,
     },
     adress: {
       Country: 'Unknown',

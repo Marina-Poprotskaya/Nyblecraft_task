@@ -11,24 +11,23 @@ class Table extends React.Component {
     this.state = {
       arrayOfData: JSON.parse(localStorage.getItem('state')),
       showModal: false,
+      indexForInfo: 0,
     }
   }
 
-  handleModal = () => {
+  handleModal = (e) => {
+    this.state.arrayOfData.forEach((el, index) => {
+      if (el.weather.date === e.target.id) {
+        this.setState({ indexForInfo: index });
+      }
+    })
     this.setState({ showModal: !this.state.showModal });
-    // for(let i = 0; i = this.state.arrayOfData.length; i++) {
-    //   console.log(this.id)
-    //   if(this.state.arrayOfData[i].weather.date === Button.id) {
-    //     console.log(i);
-    //     return i;
-    //   }
-    // }
   }
 
   render() {
     return (
       <div className='wrapperTable'>
-        {this.state.showModal && <Modal handleModal={this.handleModal} />}
+        {this.state.showModal && <Modal handleModal={this.handleModal} index={this.state.indexForInfo} />}
         {this.state.arrayOfData.reverse().map(({ location, weather }) => (
           <div key={`id-${location.idDate}`} className="rowForData">
             <div className='cell'>{location.date.day}</div>
@@ -39,14 +38,13 @@ class Table extends React.Component {
              </div>
             <div className='cell'>{location.adress.city}</div>
             <div className='cell button'>
-              <Button variant="info" id={`id-${weather.date}`} onClick={this.handleModal}>Info</Button>
+              <Button variant="info" id={weather.date} key={weather.date} onClick={this.handleModal}>Info</Button>
             </div>
           </div>
-
         ))}
       </div>
     )
   }
-} 
+}
 
 export default Table;

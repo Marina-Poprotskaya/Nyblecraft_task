@@ -36,11 +36,6 @@ class Map extends React.Component {
   
   componentDidUpdate(nextProps) {  
     if (JSON.stringify(nextProps.coordinates.longitude) !== JSON.stringify(this.props.coordinates.longitude)) {
-      //console.log('Cработало');
-      // console.log('nextProps.coordinates ДО: ', nextProps.coordinates);
-      // console.log('this.props.coordinates ДО: ', this.props.coordinates);
-      // console.log('this.state ДО: ', this.state.lng);
-      // console.log('this.state ДО: ', this.state.lat);
       this.setState({ 
         lng: this.props.coordinates.longitude,
         lat: this.props.coordinates.latitude 
@@ -51,10 +46,6 @@ class Map extends React.Component {
         center: [this.state.lng, this.state.lat],
         zoom: this.state.zoom
       });
-      // console.log('nextProps.coordinates ПОСЛЕ: ', nextProps.coordinates);
-      // console.log('this.props.coordinates ПОСЛЕ: ', this.props.coordinates);
-      // console.log('this.state ПОСЛЕ: ', this.state.lng);
-      // console.log('this.state ПОСЛЕ: ', this.state.lat);
     }
   } 
 

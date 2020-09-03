@@ -12,7 +12,7 @@ class NavBar extends React.Component {
         <Navbar bg="dark" variant="dark" >
           <Nav className="mr-auto">
             <Nav.Link as={Link} to="/firstScreen">Location</Nav.Link>
-            <Nav.Link as={Link} to="/tableScreen">Results</Nav.Link>
+            <Nav.Link as={Link} to="/secondScreen">Results</Nav.Link>
           </Nav>
         </Navbar>
       </div>
