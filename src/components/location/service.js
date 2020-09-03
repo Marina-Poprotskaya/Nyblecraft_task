@@ -1,6 +1,6 @@
 import { locationRequest, locationSuccess, locationFail } from './actions';
 import { GEOLOCATION_KEY } from './constants';
-import { createTemplateObjectWithLocation, getherDataFromStoreAndLocaleStorage } from './helpers'
+import { createTemplateObjectWithLocation } from './helpers'
 
 const getUserLocation = () => async (dispatch) => {
   try {

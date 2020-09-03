@@ -1,5 +1,4 @@
 import React from 'react';
-import { loadState } from '../location/localStorage';
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 import './style.scss';
