@@ -2,7 +2,7 @@ import React from 'react';
 import FirstScreen from './components/firstScreen/index';
 import NavBar from './components/navbar';
 import Table from './components/secondScreen/index';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 import './App.scss';
 
@@ -13,6 +13,7 @@ function App() {
         <div className="main">
           <div className='container'>
             <Route path="/" component={NavBar} />
+            <Redirect from='/' to='/firstScreen' />
             <Route exact path = "/firstScreen" component={FirstScreen} />
             <Route path = "/secondScreen" component={Table} />
           </div>
